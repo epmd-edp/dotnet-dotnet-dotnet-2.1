@@ -23,7 +23,9 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
 
+
 home: https://github.com/dfkononov/dotnet-dotnet-dotnet-2.1
+
 sources:
   - https://github.com/dfkononov/dotnet-dotnet-dotnet-2.1
 maintainers:

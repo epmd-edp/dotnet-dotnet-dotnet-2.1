@@ -5,7 +5,8 @@
 /*jslint white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true, strict: false */
 /*global document: false, jQuery: false */
 
-(function (factory) {
+(function (factory) { //NOSONAR
+    // TO DO Refactor this function to reduce its Cognitive Complexity from 77 to the 15 allowed.
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define("jquery.validate.unobtrusive", ['jquery.validation'], factory);
@@ -16,7 +17,8 @@
         // Browser global
         jQuery.validator.unobtrusive = factory(jQuery);
     }
-}(function ($) {
+}(function ($) { //NOSONAR
+  // TO DO Refactor this function to reduce its Cognitive Complexity from 77 to the 15 allowed.
     var $jQval = $.validator,
         adapters,
         data_validation = "unobtrusiveValidation";

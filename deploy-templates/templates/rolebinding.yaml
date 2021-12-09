@@ -3,13 +3,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-    name: {{ include "dotnet-dotnet-dotnet-2-1.serviceAccountName" . }}-edp
+    name: {{ include "dotnet-2-1-import-def-github.serviceAccountName" . }}-edp
 roleRef:
     kind: Role
-    name: edp-{{ include "dotnet-dotnet-dotnet-2-1.serviceAccountName" . }}-role
+    name: edp-{{ include "dotnet-2-1-import-def-github.serviceAccountName" . }}-role
     apiGroup: rbac.authorization.k8s.io
 subjects:
     - kind: ServiceAccount
-      name: {{ include "dotnet-dotnet-dotnet-2-1.serviceAccountName" . }}
+      name: {{ include "dotnet-2-1-import-def-github.serviceAccountName" . }}
 {{ end }}
 {{ end }}

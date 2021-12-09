@@ -1,11 +1,11 @@
-# Default values for dotnet-dotnet-dotnet-2-1.
+# Default values for dotnet-2-1-import-def-github.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: dotnet-dotnet-dotnet-2-1
+  repository: dotnet-2-1-import-def-github
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -46,8 +46,15 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  host: dotnet-dotnet-dotnet-2-1
+  # pathType is only for k8s >= 1.1=
+  pathType: Prefix
+  # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
+  # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
+  # ingressClassName: nginx
+  # If need to use specific host, define host value below. By default host formed according to the pattern: <CODEBASE_NAME>-<CODEBASE_NAMESPACE>.<CLUSTER_DNS_WILDCARD>
+  # host:
   path: "/"
+  dnsWildcard: eks-sandbox.aws.main.edp.projects.epam.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
